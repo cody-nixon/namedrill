@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# NameDrill 🧠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Never forget a name again** — Gamified face/name flashcards with spaced repetition.
 
-Currently, two official plugins are available:
+🔗 **Live:** [https://cody-nixon.github.io/namedrill/](https://cody-nixon.github.io/namedrill/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## The Problem
 
-## React Compiler
+Teachers, salespeople, managers, and conference attendees meet dozens of new people and struggle to remember names. The only decent solution (Name Shark) died in 2017. Existing flashcard apps aren't designed for face/name matching.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Source: [r/AppIdeas](https://www.reddit.com/r/AppIdeas/comments/1qwapxl/idea_an_app_to_make_facename_flashcards/) — *"I'd slap down money so fast for an app like this."*
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **📚 Deck Management** — Create decks for different groups (classes, teams, events)
+- **📸 Photo Upload** — Upload photos with automatic compression and cropping
+- **🎯 Multiple Choice** — See a face, pick from 4 names
+- **🔄 Reverse Mode** — See a name, pick from 4 faces
+- **⚡ Speed Round** — 60-second rapid fire typing challenge
+- **🧠 Classic Flash** — Self-graded flashcards with flip reveal
+- **📈 Spaced Repetition** — SM-2 algorithm (same as Anki) schedules reviews at optimal intervals
+- **📊 Progress Tracking** — Per-card accuracy, deck mastery percentage
+- **💾 Export/Import** — Backup and restore all your data as JSON
+- **🌙 Dark Mode** — Easy on the eyes
+- **📱 Mobile-First** — Responsive design, works great on phones
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React + TypeScript + Vite
+- Tailwind CSS + shadcn/ui
+- Lucide React icons
+- SM-2 spaced repetition algorithm
+- localStorage (no backend, fully private)
+- GitHub Pages deployment
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Run Locally
+
+```bash
+git clone https://github.com/cody-nixon/namedrill.git
+cd namedrill
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## How It Works
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. **Create a deck** — Name it after your class, team, or event
+2. **Add people** — Upload photos and enter names
+3. **Study** — Choose from 4 study modes
+4. **Review** — SM-2 schedules cards at optimal intervals for long-term retention
+5. **Track progress** — Watch your mastery percentage climb
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Privacy
+
+All data stays in your browser's localStorage. No accounts, no cloud, no tracking. Your photos never leave your device.
+
+## License
+
+MIT
